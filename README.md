@@ -26,7 +26,7 @@ $ docker run --name=jenkins -d -it -p 8001:8080 -p 2201:22 -p 50001:50000 --rest
 
 ```sh
 $ docker build -t my-jenkins-app .
-$ docker run --name jenkins -it --rm  -p 8001:8080 -p 2201:22 -p 50001:50000 -v $(pwd)/var/jenkins_home:/var/jenkins_home -v $(pwd)/root/.ssh:/root/.ssh my-jenkins-app
+$ docker run --name jenkins -it --rm -p 8001:8080 -p 2201:22 -p 50001:50000 -v $(pwd)/var/jenkins_home:/var/jenkins_home -v $(pwd)/root/.ssh:/root/.ssh my-jenkins-app
 ```
 
 ### Docker Compose
