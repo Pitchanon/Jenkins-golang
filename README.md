@@ -13,13 +13,13 @@
 ### Running
 
 ```sh
-$ docker run --name=jenkins --rm -it -p 8005:8080 -p 2205:22 -p 50005:50000 -v $(pwd)/var/jenkins_home:/var/jenkins_home pitchanon/jenkins-golang 
+$ docker run --name=jenkins --rm -it -p 8001:8080 -p 2201:22 -p 50001:50000 -v $(pwd)/var/jenkins_home:/var/jenkins_home pitchanon/jenkins-golang 
 ```
 
 Run container in background
 
 ```sh
-$ docker run --name=jenkins --rm -it -d -p 8005:8080 -p 2205:22 -p 50005:50000 --restart=always -v $(pwd)/var/jenkins_home:/var/jenkins_home pitchanon/jenkins-golang 
+$ docker run --name=jenkins --rm -it -d -p 8001:8080 -p 2201:22 -p 50001:50000 --restart=always -v $(pwd)/var/jenkins_home:/var/jenkins_home pitchanon/jenkins-golang 
 ```
 
 ### Building
@@ -29,7 +29,7 @@ $ docker-compose up --build -d
 ```
 
 ### Localhost
-* [Jenkins url]
+* [http://localhost:8001]
 
 [Docker Hub]: https://hub.docker.com/r/pitchanon/jenkins-golang/
-[Jenkins url]: http://localhost:8005
+[http://localhost:8001]: http://localhost:8001
