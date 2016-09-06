@@ -22,10 +22,17 @@ Run container in background
 $ docker run --name=jenkins --rm -it -d -p 8001:8080 -p 2201:22 -p 50001:50000 --restart=always -v $(pwd)/var/jenkins_home:/var/jenkins_home pitchanon/jenkins-golang 
 ```
 
-### Building
+### Docker Compose
 
 ```sh
 $ docker-compose up --build -d
+```
+
+### Building
+
+```sh
+$ docker build -t my-jenkins-app .
+$ docker run --name jenkins -it --rm  -p 8001:8080 -p 2201:22 -p 50001:50000 -v $(pwd)/var/jenkins_home:/var/jenkins_home my-jenkins-app
 ```
 
 ### Localhost
