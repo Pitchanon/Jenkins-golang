@@ -13,26 +13,26 @@
 ### Running
 
 ```sh
-$ docker run --name=jenkins --rm -it -p 8001:8080 -p 2201:22 -p 50001:50000 -v $(pwd)/var/jenkins_home:/var/jenkins_home pitchanon/jenkins-golang 
+$ docker run --name=jenkins --rm -it -p 8001:8080 -p 2201:22 -p 50001:50000 -v $(pwd)/var/jenkins_home:/var/jenkins_home -v $(pwd)/root/.ssh:/root/.ssh pitchanon/jenkins-golang 
 ```
 
 Run container in background
 
 ```sh
-$ docker run --name=jenkins --rm -it -d -p 8001:8080 -p 2201:22 -p 50001:50000 --restart=always -v $(pwd)/var/jenkins_home:/var/jenkins_home pitchanon/jenkins-golang 
-```
-
-### Docker Compose
-
-```sh
-$ docker-compose up --build -d
+$ docker run --name=jenkins --rm -it -d -p 8001:8080 -p 2201:22 -p 50001:50000 --restart=always -v $(pwd)/var/jenkins_home:/var/jenkins_home -v $(pwd)/root/.ssh:/root/.ssh pitchanon/jenkins-golang 
 ```
 
 ### Building
 
 ```sh
 $ docker build -t my-jenkins-app .
-$ docker run --name jenkins -it --rm  -p 8001:8080 -p 2201:22 -p 50001:50000 -v $(pwd)/var/jenkins_home:/var/jenkins_home my-jenkins-app
+$ docker run --name jenkins -it --rm  -p 8001:8080 -p 2201:22 -p 50001:50000 -v $(pwd)/var/jenkins_home:/var/jenkins_home -v $(pwd)/root/.ssh:/root/.ssh my-jenkins-app
+```
+
+### Docker Compose
+
+```sh
+$ docker-compose up --build -d
 ```
 
 ### Localhost
